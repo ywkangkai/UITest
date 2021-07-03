@@ -1,0 +1,85 @@
+pytest收集测试用例的规则：
+1、默认从当前目录中搜集测试用例，即在哪个目录下运行pytest命令，则从哪个目录当中搜索；
+2、搜索规则：
+      1）符合命名规则 test_*.py  或者  *_test.py 的文件
+
+      2）以test_开头的函数名；
+      3）以Test开头的测试类（没有__init__函数）当中，以test_开头的函数
+
+
+
+
+对测试用例打标签。在运行测试用例的时候，可根据标签名来过滤要运行的用例。
+使用方法：
+1、注册标签名
+2、在测试用例/测试类前面加上：@pytest.mark.标记名
+
+注册方式：
+1、创建pytest.ini文件，在文件中按如下形式添加标签名：
+    [pytest]
+    markers =
+             slow: marks tests as slow (deselect with '-m "not slow"')
+             serial
+   注：冒号之后是可选的描述信息
+
+
+
+打标记范围：测试用例、测试类、模块文件
+
+使用方法-1：
+在测试用例/测试类前面加上：@pytest.mark.标记名
+示例：
+@pytest.mark.smoke
+
+可在一个用例上打多个标签。多次使用@pytest.mark.标签名即可。
+示例：
+@pytest.mark.smoke
+@pytest.mark.demo
+def test_demo():
+      print(“我是示例啦！！！”)
+
+
+使用方法-2：
+在测试类里，使用以下申明(测试类下，所有用例都被打上该标签)：
+   class TestClass(object):
+    	pytestmark = pytest.mark.已注册标签名
+    	pytestmark = [pytest.mark.标签1, pytest.mark.标签2]   # 多标签模式
+
+
+在 模块文件里，同理(py文件下，所有测试函数和测试类里的测试函数，都有该标签)：
+    import pytest
+    pytestmark = pytest.mark.webtest
+    pytestmark = [pytest.mark.标签1, pytest.mark.标签2]   # 多标签模式
+
+
+
+pytest - 定义fixture
+
+fixture的参数中,有scope作用域：
+function：每个test都运行，默认是function的scope。即unittest中的Setup和tearDown
+class：每个class的所有test只运行一次。 即unittest中的setupClass和teardownClass
+module：每个module的所有test只运行一次
+session：每个session只运行一次
+
+fixture中设置返回值：
+有的时候，我们在测试环境初始化时，会对资源进行处理后，在测试用例中要使用这个资源。
+yield 返回值
+
+示例：
+@pytest.fixture   #默认scope为function
+def myfixture():
+   driver = webdriver.Chrome()    #测试用例执行之前，执行的准备工作
+   yield driver         #将driver作为返回值。在测试用例中需要使用driver
+   driver.close()      #测试用例执行完成之后，要执行的清理操作
+   driver.quit()        #测试用例执行完成之后，要执行的清理操作
+
+
+2. 用fixture装饰器调用fixture：
+   在测试用例/测试类前面加上@pytest.mark.usefixtures(“fixture函数名字”)
+    ps: 定义conftest.py文件，在此文件中可定义多个fixture.pytest会自动搜索此文件
+
+
+conftest.py
+定义公共的fixture，多个测试类中都可以调用。
+pytest提供了conftest.py文件，可以将fixture定义在此文件中。
+运行测试用例时，不需要去导入这个文件，会自动去查找conftest.py文件，然后去找到对应的fixture。

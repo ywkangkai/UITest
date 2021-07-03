@@ -1,0 +1,15 @@
+ Fri, 26 Jul 2019 11:38:39  INFO logger.py <module> [ line:24 ] hehehe
+ Fri, 26 Jul 2019 11:38:45  INFO basepage.py wait_eleVisible [ line:31 ] 等待元素 ('id', 'js_login') 可见。
+ Fri, 26 Jul 2019 11:38:45  INFO basepage.py wait_eleVisible [ line:45 ] 开始等待时间点：2019-07-26 11:38:45.278959，结束等待时间点：2019-07-26 11:38:45.433938，等待时长为：0:00:00.154979
+ Fri, 26 Jul 2019 11:38:45  INFO basepage.py get_element [ line:72 ] 查找 腾讯课堂首页_登录按钮 中的元素 ('id', 'js_login') 
+ Fri, 26 Jul 2019 11:38:45  INFO basepage.py click_element [ line:95 ]  点击元素 ('id', 'js_login')
+ Fri, 26 Jul 2019 11:38:45  INFO basepage.py wait_eleVisible [ line:31 ] 等待元素 ('id', 'switcher_plogin') 可见。
+ Fri, 26 Jul 2019 11:39:15  ERROR basepage.py wait_eleVisible [ line:38 ] 等待元素可见失败：
+Traceback (most recent call last):
+  File "/Users/liyuan/PycharmProjects/py17_Web_Framework_V5/Common/basepage.py", line 35, in wait_eleVisible
+    WebDriverWait(self.driver,timeout,frequency).until(EC.visibility_of_element_located(loc))
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/selenium/webdriver/support/wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+ Fri, 26 Jul 2019 11:39:16  INFO basepage.py save_web_screenshot [ line:191 ] 网页截图成功。图片存储在：/Users/liyuan/PycharmProjects/py17_Web_Framework_V5/Outputs/screenshots/qq登录窗口_用户名密码登录按钮_2019-07-26 11_39_15.png

@@ -1,0 +1,13 @@
+ Tue, 23 Jul 2019 22:05:30  INFO logger.py <module> [ line:24 ] hehehe
+ Tue, 23 Jul 2019 22:05:40  INFO basepage.py wait_eleVisible [ line:28 ] 等待元素 ('xpath', '//input[@name="phone"]') 可见。
+ Tue, 23 Jul 2019 22:05:40  INFO basepage.py wait_eleVisible [ line:36 ] 开始等待时间点：2019-07-23 22:05:40.167598，结束等待时间点：2019-07-23 22:05:40.359490，等待时长为：0:00:00.191892
+ Tue, 23 Jul 2019 22:05:40  INFO basepage.py get_element [ line:51 ] 查找 登陆页面_输入用户名 中的元素 ('xpath', '//input[@name="phone"]') 
+ Tue, 23 Jul 2019 22:05:40  INFO basepage.py input_text [ line:91 ]  给元素 ('xpath', '//input[@name="phone"]') 输入文本内容:('18684720553',)
+ Tue, 23 Jul 2019 22:05:41  INFO basepage.py wait_eleVisible [ line:28 ] 等待元素 ('xpath', '//input[@name="password"]') 可见。
+ Tue, 23 Jul 2019 22:05:41  INFO basepage.py wait_eleVisible [ line:36 ] 开始等待时间点：2019-07-23 22:05:41.028993，结束等待时间点：2019-07-23 22:05:41.171912，等待时长为：0:00:00.142919
+ Tue, 23 Jul 2019 22:05:41  INFO basepage.py get_element [ line:51 ] 查找 登陆页面_输入密码 中的元素 ('xpath', '//input[@name="password"]') 
+ Tue, 23 Jul 2019 22:05:41  INFO basepage.py input_text [ line:91 ]  给元素 ('xpath', '//input[@name="password"]') 输入文本内容:('python',)
+ Tue, 23 Jul 2019 22:05:41  INFO basepage.py wait_eleVisible [ line:28 ] 等待元素 ('tag name', 'button') 可见。
+ Tue, 23 Jul 2019 22:05:41  INFO basepage.py wait_eleVisible [ line:36 ] 开始等待时间点：2019-07-23 22:05:41.630541，结束等待时间点：2019-07-23 22:05:41.798442，等待时长为：0:00:00.167901
+ Tue, 23 Jul 2019 22:05:41  INFO basepage.py get_element [ line:51 ] 查找 登陆页面_点击登陆按钮 中的元素 ('tag name', 'button') 
+ Tue, 23 Jul 2019 22:05:41  INFO basepage.py click_element [ line:74 ]  点击元素 ('tag name', 'button')

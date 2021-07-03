@@ -1,0 +1,31 @@
+ Tue, 23 Jul 2019 22:15:00  INFO logger.py <module> [ line:24 ] hehehe
+ Tue, 23 Jul 2019 22:15:10  INFO basepage.py wait_eleVisible [ line:28 ] 等待元素 ('xpath', '//input[@name="phone"]') 可见。
+ Tue, 23 Jul 2019 22:15:10  ERROR basepage.py wait_eleVisible [ line:39 ] 等待元素可见失败：
+Traceback (most recent call last):
+  File "D:\Pychram-Workspace\py17_Web_Framework_V5\Common\basepage.py", line 32, in wait_eleVisible
+    WebDriverWait(self.driver,timeout,frequency).until(EC.visibility_of_element_located(loc))
+  File "D:\python37\lib\site-packages\selenium\webdriver\support\wait.py", line 71, in until
+    value = method(self._driver)
+  File "D:\python37\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 128, in __call__
+    return _element_if_visible(_find_element(driver, self.locator))
+  File "D:\python37\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 411, in _find_element
+    return driver.find_element(*by)
+AttributeError: 'NoneType' object has no attribute 'find_element'
+ Tue, 23 Jul 2019 22:15:10  ERROR basepage.py save_web_screenshot [ line:143 ] 网页截屏失败！
+Traceback (most recent call last):
+  File "D:\Pychram-Workspace\py17_Web_Framework_V5\Common\basepage.py", line 32, in wait_eleVisible
+    WebDriverWait(self.driver,timeout,frequency).until(EC.visibility_of_element_located(loc))
+  File "D:\python37\lib\site-packages\selenium\webdriver\support\wait.py", line 71, in until
+    value = method(self._driver)
+  File "D:\python37\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 128, in __call__
+    return _element_if_visible(_find_element(driver, self.locator))
+  File "D:\python37\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 411, in _find_element
+    return driver.find_element(*by)
+AttributeError: 'NoneType' object has no attribute 'find_element'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Pychram-Workspace\py17_Web_Framework_V5\Common\basepage.py", line 140, in save_web_screenshot
+    self.driver.save_screenshot(screenshot_dir +"/" + filepath)
+AttributeError: 'NoneType' object has no attribute 'save_screenshot'

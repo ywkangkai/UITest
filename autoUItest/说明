@@ -1,0 +1,51 @@
+1、自动识别用例  - 确定目录、test_*.py/*_test.py、test_/Test*.test_
+2、assert 表达式
+3、四个级别前置后置:session\module\class\function
+4、丰富的插件。allure
+
+
+# mark功能 - 筛选用例
+# 1\注册商标(pytest.ini  [pytest]  markers)、
+# 2\使用商标(模块/类/用例  )。
+类和用例：@pytest.mark.商标名称  -  一个用例/类  可以有多个标签。
+模块/类：pytestmarker = [pytest.mark.商标名称]
+# 3\运行时，通过商标名称过滤用例。
+pytest -m 商标名称
+
+
+# fixture功能 - 共享前置后置
+# 1、共享的方式：conftest.py文件。  共享的范围：它爸爸下的所有测试用例。
+# 2、实现前置后置？  定义了实现和范围。
+  @pytest.fixture(scope=) # 默认作用域是测试用例。
+  def my_setupTeardown():
+      # 前置
+      yield 返回值,返回值2
+      # 后置
+
+  # 需要其它fixture的返回值
+  # 有部分共用的前置后置、有先后顺序
+  举例：
+  登陆(每个用例)：前置：打开浏览器 - 访问网址   后置：关闭会话
+  投资(每个用例)：前置：打开浏览器 - 访问网址 - 登陆网站 - 选标    后置：关闭会话
+  充值(每个用例)：前置：打开浏览器 - 访问网址 - 登陆网站    后置：关闭会话
+  # 我有许多的不同的前置 后置，怎么办？
+  1）层级的conftest.py
+  2）有些前置后置，只有自己的测试用例要用。直接在测试用例文件中定义fixture.
+
+
+# 3、如何应用在测试用例上？ - 测试用例当中，主动引用需要的fixture。
+1、通过装饰器直接使用：
+     用例不需要使用fixture的返回值：
+     @pytest.mark.usefixture("fixture的函数名称")
+
+     用例需要使用fixture的返回值：
+     第一步：测试用例/类  @pytest.mark.usefixture("fixture的函数名称")
+     第二步：将fixture的函数名称 作为  测试用例的  参数。 fixture函数名称 = fixture函数的返回值。
+
+2、可以使用多个前置后置。但是不能冲突 。比如：打开2次浏览器。
+
+
+3、session级别的会话 - autouse可以设置为True
+
+4、pytest用例的执行顺序:文件名称的顺序 -  测试用例的代码顺序
+

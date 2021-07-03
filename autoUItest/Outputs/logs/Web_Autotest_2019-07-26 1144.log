@@ -1,0 +1,18 @@
+ Fri, 26 Jul 2019 11:44:28  INFO logger.py <module> [ line:24 ] hehehe
+ Fri, 26 Jul 2019 11:44:33  INFO basepage.py wait_eleVisible [ line:31 ] 等待元素 ('id', 'js_login') 可见。
+ Fri, 26 Jul 2019 11:44:33  INFO basepage.py wait_eleVisible [ line:45 ] 开始等待时间点：2019-07-26 11:44:33.492638，结束等待时间点：2019-07-26 11:44:33.657829，等待时长为：0:00:00.165191
+ Fri, 26 Jul 2019 11:44:33  INFO basepage.py get_element [ line:72 ] 查找 腾讯课堂首页_登录按钮 中的元素 ('id', 'js_login') 
+ Fri, 26 Jul 2019 11:44:33  INFO basepage.py click_element [ line:95 ]  点击元素 ('id', 'js_login')
+ Fri, 26 Jul 2019 11:44:33  INFO basepage.py wait_eleVisible [ line:31 ] 等待元素 ('xpath', '//a[text()="QQ登录"]') 可见。
+ Fri, 26 Jul 2019 11:44:34  INFO basepage.py wait_eleVisible [ line:45 ] 开始等待时间点：2019-07-26 11:44:33.793480，结束等待时间点：2019-07-26 11:44:34.351087，等待时长为：0:00:00.557607
+ Fri, 26 Jul 2019 11:44:34  INFO basepage.py get_element [ line:72 ] 查找 腾讯课堂登陆窗口_选择qq登录方式 中的元素 ('xpath', '//a[text()="QQ登录"]') 
+ Fri, 26 Jul 2019 11:44:34  INFO basepage.py click_element [ line:95 ]  点击元素 ('xpath', '//a[text()="QQ登录"]')
+ Fri, 26 Jul 2019 11:44:36  INFO basepage.py switch_to_iframe [ line:213 ] 切换到 腾讯课堂登陆窗口_进入qq登录所在的iframe 的iframe元素：('name', 'login_frame_qq') 成功！可以对新的html页面操作了！
+ Fri, 26 Jul 2019 11:44:36  INFO basepage.py wait_eleVisible [ line:31 ] 等待元素 ('id', 'switcher_plogin') 可见。
+ Fri, 26 Jul 2019 11:44:36  INFO basepage.py wait_eleVisible [ line:45 ] 开始等待时间点：2019-07-26 11:44:36.170096，结束等待时间点：2019-07-26 11:44:36.206353，等待时长为：0:00:00.036257
+ Fri, 26 Jul 2019 11:44:36  INFO basepage.py get_element [ line:72 ] 查找 qq登录窗口_用户名密码登录按钮 中的元素 ('id', 'switcher_plogin') 
+ Fri, 26 Jul 2019 11:44:36  INFO basepage.py click_element [ line:95 ]  点击元素 ('id', 'switcher_plogin')
+ Fri, 26 Jul 2019 11:44:36  INFO basepage.py wait_eleVisible [ line:31 ] 等待元素 ('id', 'u') 可见。
+ Fri, 26 Jul 2019 11:44:36  INFO basepage.py wait_eleVisible [ line:45 ] 开始等待时间点：2019-07-26 11:44:36.343014，结束等待时间点：2019-07-26 11:44:36.390005，等待时长为：0:00:00.046991
+ Fri, 26 Jul 2019 11:44:36  INFO basepage.py get_element [ line:72 ] 查找 qq登录窗口_输入用户名 中的元素 ('id', 'u') 
+ Fri, 26 Jul 2019 11:44:36  INFO basepage.py input_text [ line:120 ]  给元素 ('id', 'u') 输入文本内容:('2501768591',)
